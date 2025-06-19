@@ -1,6 +1,6 @@
 .screen-container {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: #000; 
+    color: #fff; 
     font-family: Arial, sans-serif;
     padding: 20px;
     min-height: 100vh;
@@ -8,12 +8,16 @@
   }
   
   .header {
+    background-color: #f7d044;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #333; /* Darker border for separation */
+    border-bottom: 2px solid #333; 
+    padding: 20px;
+    border-radius: 5px 5px 0 0; 
+    color: #000; 
   }
   
   .title {
@@ -26,45 +30,43 @@
     align-items: center;
     font-weight: bold;
     font-size: 0.9em;
-    color: #f7d044; /* Yellow color from the image */
+    color: #000000; 
   }
   
   .logo-pedidos-ya .icon {
-    width: 24px; /* Adjust as needed */
-    height: 24px; /* Adjust as needed */
+    width: 24px; 
+    height: 24px; 
     margin-right: 8px;
-    /* You'd typically use an SVG or a custom icon here */
-    /* For now, just a placeholder if you don't have the exact icon */
-    filter: invert(80%) sepia(50%) saturate(1000%) hue-rotate(0deg) brightness(100%) contrast(100%); /* To make a generic icon look yellow */
+    filter: invert(80%) sepia(50%) saturate(1000%) hue-rotate(0deg) brightness(100%) contrast(100%); 
   }
   
   .content-section {
     display: flex;
     justify-content: space-around;
-    gap: 50px; /* Space between form and image sections */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 50px; 
+    flex-wrap: wrap; 
   }
   
   .form-section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    flex: 1; /* Allow it to grow */
-    min-width: 300px; /* Minimum width before wrapping */
+    flex: 1; 
+    min-width: 300px; 
   }
   
   .input-field {
-    background-color: #333; /* Darker grey for input fields */
+    background-color: hwb(0 98% 0%); 
     border: none;
     border-radius: 5px;
     padding: 15px;
-    color: #fff;
+    color: #000000;
     font-size: 1.1em;
     outline: none;
   }
   
   .input-field::placeholder {
-    color: #aaa; /* Lighter grey for placeholder text */
+    color: #aaa; 
   }
   
   .image-upload-section {
@@ -72,18 +74,18 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    flex: 1; /* Allow it to grow */
-    min-width: 300px; /* Minimum width before wrapping */
+    flex: 1; 
+    min-width: 300px; 
   }
   
   .image-placeholder {
     width: 300px;
     height: 200px;
-    background-color: #ADD8E6; /* Light blue background for the sky */
-    border: 4px solid #8B0000; /* Dark red border for the window effect */
+    background-color: #ADD8E6; 
+    border: 4px solid #8B0000; 
     position: relative;
     overflow: hidden;
-    box-shadow: 5px 5px 0px 0px #8B0000; /* Window shadow effect */
+    box-shadow: 5px 5px 0px 0px #8B0000; 
   }
   
   .close-icon {
@@ -92,7 +94,7 @@
     right: 10px;
     font-size: 1.2em;
     font-weight: bold;
-    color: #8B0000; /* Dark red for the 'X' */
+    color: #8B0000; 
     cursor: pointer;
   }
   
@@ -114,13 +116,13 @@
     left: 0;
     width: 100%;
     height: 50%;
-    background-color: #8FBC8F; /* Green for the landscape */
-    border-top: 10px solid #556B2F; /* Darker green for a hill/detail */
+    background-color: #8FBC8F; 
+    border-top: 10px solid #556B2F; 
     box-sizing: border-box;
   }
   
   .confirm-button {
-    background-color: #f7d044; /* Yellow button */
+    background-color: #f7f6f6; 
     color: #000;
     border: none;
     border-radius: 5px;
@@ -132,10 +134,10 @@
   }
   
   .confirm-button:hover {
-    background-color: #e0b000; /* Slightly darker yellow on hover */
+    background-color: #e0b000; 
   }
   
-  /* Responsive adjustments */
+  
   @media (max-width: 768px) {
     .content-section {
       flex-direction: column;

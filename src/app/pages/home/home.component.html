@@ -1,26 +1,14 @@
-<div class="container py-5">
-  <!-- Título -->
-  <div class="text-center mb-5">
-    <h1 class="fw-bold">Explorá las mejores opciones</h1>
-    <p class="text-muted">Descubrí lo más pedido cerca tuyo</p>
-  </div>
+<div class="home-container">
+  <nav class="navbar">
+    <div class="logo">PEDIDOS YA</div>
+    <button class="login-btn" onclick="window.location.href='http://localhost:4200/login'">INICIAR SESIÓN</button>
+  </nav>
 
-  <!-- Grid de Cards -->
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    @for(item of items;track $index){
-    <div class="col">
-      <div class="card h-100 shadow-sm">
-        <img [src]="item.image" class="card-img-top" >
-        <div class="card-body">
-          <h5 class="card-title">{{ item.name }}</h5>
-          <p class="card-text text-muted">{{ item.description }}</p>
-        </div>
-        <div class="card-footer bg-white border-top-0">
-          <button class="btn btn-primary w-100">Ver más</button>
-        </div>
-      </div>
+  <div class="hero-content">
+    <div class="headline">
+      DISFRUTA DE UN AMBIENTE <br />
+      ÚNICO Y ESPECIAL
     </div>
-    }
-
+    <div class="arrow">&#8595;</div>
   </div>
 </div>

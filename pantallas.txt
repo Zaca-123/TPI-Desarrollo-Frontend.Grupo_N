@@ -1,0 +1,9 @@
+adm-restaurant: Lista
+adm-menu:Listo
+adm-products: Listo
+restaurant para usuario:Listo
+home:esta
+login:no
+menus:esta
+
+REVISAR PANTALLAS

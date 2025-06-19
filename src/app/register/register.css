@@ -1,0 +1,171 @@
+/* Overall page background and layout - REUSED FROM LOGIN */
+.main-container {
+    background-color: #f7d044; /* Yellow background */
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: flex-start; /* Start from the top */
+    padding-top: 20px; /* Space from the top */
+    position: relative; /* For absolute positioning of the logo */
+    font-family: Arial, sans-serif; /* General font */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+  }
+  
+  /* Top-left logo section - REUSED FROM LOGIN */
+  .top-left-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: #f7d044; /* Yellow text */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    gap: 8px; /* Space between icon and text */
+    z-index: 10; /* Ensure it stays on top */
+  }
+  
+  .logo-icon {
+    width: 24px; /* Size of the icon */
+    height: 24px;
+    filter: brightness(0) invert(1); /* Makes a black icon white */
+  }
+  
+  /* No "BIENVENIDO" title in this screen, so no .welcome-section */
+  
+  /* Register card container for centering - SIMILAR TO LOGIN */
+  .register-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Take full width to allow max-width on card */
+    /* This margin-top pushes the card down, adjusting for no "BIENVENIDO" title */
+    margin-top: 100px; /* Adjust as needed to visually match the image */
+    padding-bottom: 40px; /* Add some space at the bottom */
+  }
+  
+  /* The actual register card - SIMILAR TO LOGIN CARD */
+  .register-card {
+    background-color: #000; /* Black background for the card */
+    padding: 40px;
+    border-radius: 20px; /* Rounded corners for the card */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    width: 100%;
+    max-width: 400px; /* Max width */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between elements */
+    align-items: center; /* Center items within the card */
+  }
+  
+  /* Card Title */
+  .card-title {
+    color: white; /* White text for the title */
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center;
+  }
+  
+  
+  /* Input field styling - REUSED FROM LOGIN, renamed for clarity */
+  .register-input {
+    background-color: #fff; /* White background for inputs */
+    border: none;
+    border-radius: 50px; /* Very rounded pill shape */
+    padding: 15px 25px;
+    color: #000; /* Black text for input */
+    font-size: 1.1em;
+    width: calc(100% - 50px); /* Full width minus padding */
+    outline: none; /* Remove outline on focus */
+    text-align: center; /* Center placeholder text */
+    font-weight: bold; /* Make placeholder/input text bold */
+  }
+  
+  .register-input::placeholder {
+    color: #000; /* Black placeholder text */
+  }
+  
+  /* Social login buttons container - REUSED FROM LOGIN */
+  .social-login-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 10px;
+    margin-bottom: 10px; /* Add some space before the final button */
+  }
+  
+  .social-button {
+    width: 50px; /* Size of the circular buttons */
+    height: 50px;
+    border-radius: 50%; /* Make them circular */
+    border: none;
+    background-size: 70%; /* Size of the icon inside */
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .social-button:hover {
+    transform: scale(1.05);
+  }
+  
+  .google-button {
+    background-color: #fff; /* White background */
+    background-image: url('../../assets/img/google-icon.png'); /* Path to your Google icon */
+  }
+  
+  .facebook-button {
+    background-color: #fff; /* White background */
+    background-image: url('../../assets/img/facebook-icon.png'); /* Path to your Facebook icon */
+  }
+  
+  /* Register button - REUSED FROM LOGIN, renamed for clarity */
+  .action-button {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border: none;
+    border-radius: 50px; /* Very rounded pill shape */
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: calc(100% - 50px); /* Full width minus padding */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #eee; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  /* Specific styling for the final Register button if needed, although action-button covers it */
+  .register-final-button {
+    margin-top: 10px; /* Add a bit more space if needed */
+  }
+  
+  
+  /* Responsive adjustments - REUSED FROM LOGIN, adapted */
+  @media (max-width: 500px) {
+    .register-card-wrapper {
+      margin-top: 80px; /* Adjust top margin for smaller screens */
+    }
+  
+    .register-card {
+      padding: 30px;
+      margin: 0 15px; /* Add some horizontal margin on smaller screens */
+    }
+  
+    .register-input, .action-button {
+      width: calc(100% - 30px); /* Adjust width for smaller padding */
+    }
+  
+    .top-left-logo {
+      font-size: 0.8em;
+      padding: 8px 15px;
+    }
+  }

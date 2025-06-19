@@ -11,7 +11,8 @@ import { Menus } from './pages/menus/menus';
 import { EditProduct } from './pages/edit-product/edit-product';
 import { EditRestaurant } from './pages/edit-restaurant/edit-restaurant';
 import { EditMenu } from './pages/edit-menu/edit-menu';
-
+import { AddRestaurant } from './pages/add-restaurant/add-restaurant'; 
+import { Register } from './register/register'; 
 
 export const routes: Routes = [
   {
@@ -34,5 +35,7 @@ export const routes: Routes = [
   { path: 'edit-product', component: EditProduct },
   { path: 'edit-restaurant', component: EditRestaurant },
   { path: 'edit-menu', component: EditMenu },
+  {path: 'add-restaurant', component: AddRestaurant},
+  {path: 'register', component: Register}
 
 ];

@@ -1,9 +1,11 @@
 adm-restaurant: Lista
 adm-menu:Listo
-adm-products: Listo
+adm-products: Listo- ver porque no pone fondo amarillo
 restaurant para usuario:Listo
 home:esta
 login:no
-menus:esta
+menus:lista
+edit-restaurant:lista
+add-restaurant:lista
 
 REVISAR PANTALLAS

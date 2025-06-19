@@ -1,22 +1,32 @@
-/* Fondo amarillo */
+/* Fondo general */
 body {
-  background-color: #eebe00;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  background-color: yellow;
+  height: 100vh;
+  width: 100vw;
 }
 
 /* Caja negra */
 .admin-container {
-  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #0f0e0a;
   color: #fff;
   padding: 2rem;
   border-radius: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Header */
+.admin-header {
+  flex-shrink: 0;
+}
+
 .btn-add {
   font-weight: bold;
   border-radius: 2rem;
@@ -26,10 +36,12 @@ body {
   gap: 0.5rem;
 }
 
-/* Grid de tarjetas en dos columnas */
+/* Grid de tarjetas en tres columnas */
 .product-list {
+  flex: 1;
+  overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -53,6 +65,15 @@ body {
 }
 
 /* Paginación */
+.pagination {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
 .pagination button {
   border-radius: 2rem;
   font-weight: bold;

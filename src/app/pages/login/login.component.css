@@ -1,5 +1,183 @@
-.card {
-  width: 100%;
-  max-width: 400px;
+/* Overall page background and layout */
+.main-container {
+  background-color: #f7d044; /* Yellow background */
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: flex-start; /* Start from the top */
+  padding-top: 20px; /* Space from the top */
+  position: relative; /* For absolute positioning of the logo */
+  font-family: Arial, sans-serif; /* General font */
+  box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
+/* Top-left logo section */
+.top-left-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: #f7d044; /* Yellow text */
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9em;
+  gap: 8px; /* Space between icon and text */
+}
+
+.logo-icon {
+  width: 24px; /* Size of the icon */
+  height: 24px;
+  /* Assuming you have a white version of the logo for this black background */
+  /* If not, you might need filter: invert(100%) to make it white */
+  filter: brightness(0) invert(1); /* Example: makes a black icon white */
+}
+
+/* Welcome title */
+.welcome-section {
+  margin-top: 80px; /* Push welcome down from the top logo */
+  margin-bottom: 30px; /* Space between title and card */
+}
+
+.welcome-title {
+  color: white; /* White text for welcome */
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Login card container for centering */
+.login-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Take full width to allow max-width on card */
+}
+
+/* The actual login card */
+.login-card {
+  background-color: #000; /* Black background for the card */
+  padding: 40px;
+  border-radius: 20px; /* Rounded corners for the card */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  width: 100%;
+  max-width: 400px; /* Max width as per your initial CSS */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between elements */
+  align-items: center; /* Center items within the card */
+}
+
+/* Input field styling */
+.login-input {
+  background-color: #fff; /* White background for inputs */
+  border: none;
+  border-radius: 50px; /* Very rounded pill shape */
+  padding: 15px 25px;
+  color: #000; /* Black text for input */
+  font-size: 1.1em;
+  width: calc(100% - 50px); /* Full width minus padding */
+  outline: none; /* Remove outline on focus */
+  text-align: center; /* Center placeholder text */
+  font-weight: bold; /* Make placeholder/input text bold */
+}
+
+.login-input::placeholder {
+  color: #000; /* Black placeholder text */
+}
+
+/* Forgot password text */
+.forgot-password-text {
+  color: #fff; /* White text */
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: -10px; /* Adjust spacing */
+}
+
+/* Social login buttons container */
+.social-login-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.social-button {
+  width: 50px; /* Size of the circular buttons */
+  height: 50px;
+  border-radius: 50%; /* Make them circular */
+  border: none;
+  background-size: 70%; /* Size of the icon inside */
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-button:hover {
+  transform: scale(1.05);
+}
+
+.google-button {
+  background-color: #fff; /* White background */
+  background-image: url('../../../assets/img/google-icon.png'); /* Path to your Google icon */
+  /* If your Google icon is colored, you might not need filters */
+  /* If it's black and you want a white icon on a colored button, use filter: invert(100%); */
+}
+
+.facebook-button {
+  background-color: #fff; /* White background */
+  background-image: url('../../../assets/img/facebook-icon.png'); /* Path to your Facebook icon */
+  /* Same considerations as Google icon for filters */
+}
+
+/* Action buttons (Login, Register) */
+.action-button {
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+  border: none;
+  border-radius: 50px; /* Very rounded pill shape */
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: calc(100% - 50px); /* Full width minus padding */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-button:hover {
+  background-color: #eee; /* Slightly darker on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* "Es tu primer ingreso?" text */
+.first-time-text {
+  color: #fff; /* White text */
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .welcome-title {
+    font-size: 2.5em;
+  }
+
+  .login-card {
+    padding: 30px;
+    margin: 0 15px; /* Add some horizontal margin on smaller screens */
+  }
+
+  .login-input, .action-button {
+    width: calc(100% - 30px); /* Adjust width for smaller padding */
+  }
+
+  .top-left-logo {
+    font-size: 0.8em;
+    padding: 8px 15px;
+  }
+}

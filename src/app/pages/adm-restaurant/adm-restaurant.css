@@ -1,7 +1,10 @@
 .admin-container {
+  display: flex;
+  flex-direction: column;
   background-color: #f1c40f;
   padding: 20px;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .admin-header {
@@ -9,20 +12,15 @@
   color: #fff;
   padding: 10px 20px;
   border-radius: 8px;
-}
-
-.btn-add {
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-shrink: 0;
 }
 
 .restaurant-list {
   background-color: #000;
   padding: 20px;
   border-radius: 8px;
-  margin-top: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 .restaurant-card {
@@ -38,6 +36,17 @@
   object-fit: cover;
 }
 
+.btn-add {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .action-buttons button {
   margin-left: 10px;
+}
+
+.pagination {
+  flex-shrink: 0;
 }

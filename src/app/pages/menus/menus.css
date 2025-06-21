@@ -1,5 +1,5 @@
 .admin-menus-container {
-  background-color: #d7bb34; /* amarillo borde */
+  background-color: #d7bb34; 
   padding: 20px;
   min-height: 100vh;
   display: flex;
@@ -107,7 +107,7 @@
   border-radius: 50px;
   padding: 8px 20px;
   width: fit-content;
-  margin-left: auto; /* alineado a la derecha */
+  margin-left: auto; 
   margin-top: 25px;
   display: flex;
   gap: 12px;

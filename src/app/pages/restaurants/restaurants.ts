@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RestaurantService } from '../../services/restaurant';
+import { Restaurant } from '../../models/restaurant';
 
 @Component({
   selector: 'app-restaurants',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './restaurants.html',
-  styleUrl: './restaurants.css'
+  styleUrls: ['./restaurants.css']
 })
-export class Restaurants {
+export class Restaurants implements OnInit {
+  restaurants: Restaurant[] = [];
 
+  constructor(private restaurantService: RestaurantService) {}
+
+  ngOnInit(): void {
+    this.restaurantService.getRestaurants().subscribe({
+      next: (data) => {
+        this.restaurants = data;
+      },
+      error: (err) => {
+        console.error('Error al obtener restaurantes', err);
+      }
+    });
+  }
 }

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AddRestaurant } from './add-restaurant';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('AddRestaurant', () => {
   let component: AddRestaurant;
@@ -8,9 +8,8 @@ describe('AddRestaurant', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddRestaurant]
-    })
-    .compileComponents();
+      imports: [AddRestaurant] 
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AddRestaurant);
     component = fixture.componentInstance;

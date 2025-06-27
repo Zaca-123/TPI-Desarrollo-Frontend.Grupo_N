@@ -7,11 +7,27 @@
     </div>
   </header>
 
-  <div class="content-section">
+  <form class="content-section" [formGroup]="restaurantForm" (ngSubmit)="onSubmit()" novalidate>
     <div class="form-section">
-      <input type="text" placeholder="NOMBRE RESTAURANT" class="input-field" />
-      <input type="text" placeholder="DESCRIPCIÓN" class="input-field" />
-      <input type="text" placeholder="UBICACION" class="input-field" />
+     
+      <input type="text" formControlName="name" placeholder="NOMBRE RESTAURANT" class="input-field" />
+      <div *ngIf="restaurantForm.get('name')?.touched && restaurantForm.get('name')?.invalid" class="error">
+        <small *ngIf="restaurantForm.get('name')?.errors?.['required']">El nombre es obligatorio.</small>
+        <small *ngIf="restaurantForm.get('name')?.errors?.['minlength']">Mínimo 3 caracteres.</small>
+      </div>
+
+   
+      <input type="text" formControlName="description" placeholder="DESCRIPCIÓN" class="input-field" />
+      <div *ngIf="restaurantForm.get('description')?.touched && restaurantForm.get('description')?.invalid" class="error">
+        <small *ngIf="restaurantForm.get('description')?.errors?.['required']">La descripción es obligatoria.</small>
+        <small *ngIf="restaurantForm.get('description')?.errors?.['minlength']">Mínimo 10 caracteres.</small>
+      </div>
+
+     
+      <input type="text" formControlName="imageUrl" placeholder="URL DE IMAGEN" class="input-field" />
+      <div *ngIf="restaurantForm.get('imageUrl')?.touched && restaurantForm.get('imageUrl')?.invalid" class="error">
+        <small *ngIf="restaurantForm.get('imageUrl')?.errors?.['required']">La imagen es obligatoria.</small>
+      </div>
     </div>
 
     <div class="image-upload-section">
@@ -20,7 +36,13 @@
         <div class="cloud-icon"></div>
         <div class="landscape"></div>
       </div>
-      <button class="confirm-button">CONFIRMAR</button>
+
+      <button type="submit" class="confirm-button">CONFIRMAR</button>
+
+      
+      <div *ngIf="mostrarMensaje" class="success-message">
+        {{ mensajeExito }}
+      </div>
     </div>
-  </div>
+  </form>
 </div>

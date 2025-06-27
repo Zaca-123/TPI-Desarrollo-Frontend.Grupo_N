@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { TemplateComponent } from './pages/template/template.component';
-import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdmRestaurant } from './pages/adm-restaurant/adm-restaurant';
 import { AdmMenu } from './pages/adm-menu/adm-menu';
@@ -8,8 +7,8 @@ import { AdmProduct } from './pages/adm-product/adm-product';
 import { Restaurants } from './pages/restaurants/restaurants';
 import { Menus } from './pages/menus/menus';
 import { EditRestaurant } from './pages/edit-restaurant/edit-restaurant';
-import { AddRestaurant } from './pages/add-restaurant/add-restaurant'; 
-import { Register } from './pages/register/register'; 
+import { Register } from './pages/register/register';
+import { Home } from './pages/home/home';
 
 export const routes: Routes = [
   {
@@ -18,7 +17,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: HomeComponent,
+        component: Home,
       },
     ],
   },
@@ -29,7 +28,11 @@ export const routes: Routes = [
   { path: 'restaurants', component: Restaurants },
   { path: 'menus', component: Menus },
   { path: 'edit-restaurant', component: EditRestaurant },
-  {path: 'add-restaurant', component: AddRestaurant},
-  {path: 'register', component: Register}
+  { path: 'register', component: Register },
+  { path: 'home', component: Home },
 
+  {
+    path: 'add-restaurant',
+    loadComponent: () => import('./pages/add-restaurant/add-restaurant').then(m => m.AddRestaurant)
+  }
 ];

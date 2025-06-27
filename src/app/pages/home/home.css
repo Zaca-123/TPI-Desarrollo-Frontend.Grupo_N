@@ -1,5 +1,5 @@
 .home-container {
-  background-image: url('../../../assets/img/resto1.jpg'); /* Cambia por tu imagen */
+  background-image: url('../../../assets/img/resto1.jpg'); 
   background-size: cover;
   background-position: center;
   height: 100vh;

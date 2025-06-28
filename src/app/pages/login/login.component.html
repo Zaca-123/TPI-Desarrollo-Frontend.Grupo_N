@@ -1,30 +1,42 @@
-<div class="main-container">
-  <div class="top-left-logo">
-    <img src="assets/img/pedidos-ya-logo-negro.png" alt="Pedidos Ya Logo" class="logo-icon" />
-    <span>PEDIDOS YA</span>
-  </div>
+<div class="login-container">
+  <div class="login-card">
+    <h1 class="title">BIENVENIDO</h1>
 
-  <div class="welcome-section">
-    <h1 class="welcome-title">BIENVENIDO</h1>
-  </div>
+    <input
+      type="text"
+      placeholder="USUARIO"
+      class="login-input"
+      [(ngModel)]="username"
+      name="username"
+    />
 
-  <div class="login-card-wrapper">
-    <div class="login-card">
-      <input type="text" placeholder="USUARIO" class="login-input" />
-      <input type="password" placeholder="CONTRASEÑA" class="login-input" />
+    <input
+      type="password"
+      placeholder="CONTRASEÑA"
+      class="login-input"
+      [(ngModel)]="password"
+      name="password"
+    />
 
-      <p class="forgot-password-text">¿Ha olvidado su contraseña?</p>
+    <p class="forgot-password-text">¿Ha olvidado su contraseña?</p>
 
-      <div class="social-login-buttons">
-        <button class="social-button google-button"></button>
-        <button class="social-button facebook-button"></button>
-      </div>
-
-      <button class="action-button login-button" onclick="window.location.href='http://localhost:4200/home'">INICIAR SESIÓN</button>
-
-      <p class="first-time-text">¿Es tu primer ingreso?</p>
-
-      <button class="action-button register-button" onclick="window.location.href='http://localhost:4200/register'" >REGISTRARSE</button>
+    <div class="social-login-buttons">
+      <button class="social-button google-button">
+        <img src="assets/img/google-icon.png" alt="Google" />
+      </button>
+      <button class="social-button facebook-button">
+        <img src="assets/img/facebook-icon.png" alt="Facebook" />
+      </button>
     </div>
+
+    <button class="action-button login-button" (click)="login()">
+      INICIAR SESIÓN
+    </button>
+
+    <p class="first-time-text">¿Es tu primer ingreso?</p>
+
+    <button class="action-button register-button" (click)="goToRegister()">
+      REGISTRARSE
+    </button>
   </div>
 </div>

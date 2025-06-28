@@ -9,30 +9,27 @@ import { Menus } from './pages/menus/menus';
 import { EditRestaurant } from './pages/edit-restaurant/edit-restaurant';
 import { Register } from './pages/register/register';
 import { Home } from './pages/home/home';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
     path: '',
     component: TemplateComponent,
-    children: [
-      {
-        path: '',
-        component: Home,
-      },
-    ],
+    children: [{ path: '', component: Home }],
   },
   { path: 'login', component: LoginComponent },
-  { path: 'adm-restaurant', component: AdmRestaurant },
-  { path: 'adm-product', component: AdmProduct },
-  { path: 'adm-menu', component: AdmMenu },
+  { path: 'adm-restaurant', component: AdmRestaurant, canActivate: [AuthGuard] },
+  { path: 'adm-product', component: AdmProduct, canActivate: [AuthGuard] },
+  { path: 'adm-menu', component: AdmMenu, canActivate: [AuthGuard] },
   { path: 'restaurants', component: Restaurants },
   { path: 'menus', component: Menus },
   { path: 'edit-restaurant', component: EditRestaurant },
   { path: 'register', component: Register },
   { path: 'home', component: Home },
-
   {
     path: 'add-restaurant',
-    loadComponent: () => import('./pages/add-restaurant/add-restaurant').then(m => m.AddRestaurant)
-  }
+    loadComponent: () =>
+      import('./pages/add-restaurant/add-restaurant').then((m) => m.AddRestaurant),
+    canActivate: [AuthGuard],
+  },
 ];

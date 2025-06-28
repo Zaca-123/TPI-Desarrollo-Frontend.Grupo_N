@@ -1,9 +1,78 @@
 <div class="admin-container">
   <div class="admin-header d-flex justify-content-between align-items-center">
     <h2>Administrar Restaurantes</h2>
-    <button class="btn btn-light btn-add">
+    <button class="btn btn-light btn-add" (click)="toggleAddForm()">
       <i class="bi bi-plus-circle"></i> Agregar Restaurante
     </button>
+  </div>
+
+  <!-- Mensajes de éxito y error -->
+  <div *ngIf="successMessage" class="alert alert-success alert-dismissible" role="alert">
+    {{ successMessage }}
+    <button type="button" class="btn-close" (click)="successMessage = null"></button>
+  </div>
+  
+  <div *ngIf="error" class="alert alert-danger alert-dismissible" role="alert">
+    {{ error }}
+    <button type="button" class="btn-close" (click)="error = null"></button>
+  </div>
+
+  <!-- Formulario para crear nuevo restaurante -->
+  <div *ngIf="showAddForm" class="card mb-4">
+    <div class="card-header">
+      <h5 class="mb-0">Crear Nuevo Restaurante</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #restaurantForm="ngForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre del Restaurante *</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="name" 
+            [(ngModel)]="newRestaurant.name" 
+            name="name" 
+            required
+            placeholder="Ingrese el nombre del restaurante">
+        </div>
+        
+        <div class="mb-3">
+          <label for="description" class="form-label">Descripción</label>
+          <textarea 
+            class="form-control" 
+            id="description" 
+            rows="3"
+            [(ngModel)]="newRestaurant.description" 
+            name="description"
+            placeholder="Ingrese una descripción del restaurante (opcional)"></textarea>
+        </div>
+        
+        <div class="mb-3">
+          <label for="imageUrl" class="form-label">URL de la Imagen</label>
+          <input 
+            type="url" 
+            class="form-control" 
+            id="imageUrl" 
+            [(ngModel)]="newRestaurant.imageUrl" 
+            name="imageUrl"
+            placeholder="https://ejemplo.com/imagen.jpg">
+          <div class="form-text">URL de una imagen para el restaurante (opcional)</div>
+        </div>
+        
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-secondary me-2" (click)="toggleAddForm()">
+            Cancelar
+          </button>
+          <button 
+            type="submit" 
+            class="btn btn-primary" 
+            [disabled]="!newRestaurant.name.trim() || loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+            {{ loading ? 'Creando...' : 'Crear Restaurante' }}
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <div class="restaurant-list">

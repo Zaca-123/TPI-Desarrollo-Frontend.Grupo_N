@@ -14,4 +14,8 @@ export class RestaurantService {
   getRestaurants(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(this.apiUrl);
   }
+
+  createRestaurant(restaurant: Omit<Restaurant, 'id'>): Observable<Restaurant> {
+    return this.http.post<Restaurant>(this.apiUrl, restaurant);
+  }
 }

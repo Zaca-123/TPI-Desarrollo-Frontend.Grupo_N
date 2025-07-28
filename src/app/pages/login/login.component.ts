@@ -23,11 +23,20 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe({
       next: (res) => {
         this.authService.saveToken(res.access_token);
-        this.router.navigate(['/home']);
+  
+        const role = this.authService.getUserRole();
+        console.log('[LoginComponent] Rol detectado:', role);
+  
+        if (role === 'admin') {
+          this.router.navigate(['/adm-restaurant']);
+        } else {
+          this.router.navigate(['/home']);
+        }
       },
       error: () => alert('Usuario o contraseña incorrectos'),
     });
   }
+  
 
   goToRegister() {
     this.router.navigate(['/register']);

@@ -42,18 +42,16 @@ export class AdmRestaurant {
     this.error = null;
     this.successMessage = null;
 
-    this.restaurantService.createRestaurant(this.newRestaurant).subscribe({
-      next: (restaurant) => {
+    this.restaurantService.createRestaurant(this.newRestaurant).then((restaurant) => {
         this.successMessage = `Restaurante "${restaurant.name}" creado exitosamente`;
         this.resetForm();
         this.showAddForm = false;
         this.loading = false;
-      },
-      error: (err) => {
+      }).catch((err) => {
         this.error = 'Error al crear restaurante: ' + (err.error?.message || err.message);
         this.loading = false;
-      }
-    });
+      })
+
   }
 
   private resetForm() {

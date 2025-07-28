@@ -31,8 +31,7 @@ export class AddRestaurant {
         imageUrl: string;
       };
 
-      this.restaurantService.createRestaurant(restaurantData).subscribe({
-        next: (res: Restaurant) => {
+      this.restaurantService.createRestaurant(restaurantData).then((res: Restaurant) => {
           console.log('Restaurante guardado:', res);
           this.mensajeExito = '¡Restaurante agregado correctamente!';
           this.mostrarMensaje = true;
@@ -41,11 +40,9 @@ export class AddRestaurant {
           setTimeout(() => {
             this.mostrarMensaje = false;
           }, 3500);
-        },
-        error: (err: any) => {
+        }).catch((err)=> {
           console.error('Error al guardar restaurante:', err);
-        }
-      });
+        })
     } else {
       console.warn('Formulario inválido');
       this.restaurantForm.markAllAsTouched();
